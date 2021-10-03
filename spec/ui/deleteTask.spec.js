@@ -9,15 +9,13 @@ describe('delete item from UI', () => {
       await page.goto('http://localhost:3000/');
       await expect(page.title()).resolves.toMatch('Todo App');
       
-      const inputSelector = '#root > div > div > div > form > div > input'
-      await page.waitForSelector(inputSelector);
-      await page.focus(inputSelector)        
-      await page.keyboard.type('Test1')
-      await page.keyboard.type(String.fromCharCode(13));
+      const deleteButton = '#removeBt'
+      await page.waitForSelector(deleteButton);
+      await page.focus(deleteButton)        
 
       await db.init();
       const items = await db.getItems();
-      expect(items[items.length-1].name).toBe('Test');
+      expect(items.length).toBe(0);
 
       await browser.close();
   });
