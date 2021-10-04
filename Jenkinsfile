@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage("Install dependeicies") {
             steps {
-                git 'https://git.ceesiesdomain.nl/scm/rsd/test_automation.git'
+                sh 'yarn install'
             }
         }
     }
