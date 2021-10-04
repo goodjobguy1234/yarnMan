@@ -2,12 +2,14 @@ pipeline {
     agent {
         docker {
             image 'node:lts-buster-slim'
-            args '-p 3000:3000'
+            arg '-p 3000:3000'
         }
     }
     stages {
-        steps {
-            sh 'yarn install'
+        stage("Install dependeicies") {
+            steps {
+                git 'https://git.ceesiesdomain.nl/scm/rsd/test_automation.git'
+            }
         }
     }
 }
