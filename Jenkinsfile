@@ -1,14 +1,22 @@
 pipeline {
     agent {
         docker {
-            image 'node:lts-buster-slim'
+            image 'node:6-alphine'
             args '-p 3000:3000'
         }
+    }
+    environment {
+        CI = 'true'
     }
     stages {
         stage("Install dependeicies") {
             steps {
                 sh 'npm install'
+            }
+        }
+        stage("running") {
+            steps {
+                sh 'npm start'
             }
         }
     }
