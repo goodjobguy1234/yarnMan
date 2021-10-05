@@ -6,7 +6,8 @@ pipeline {
         }
     }
     environment {
-        npm_config_cache='npm-cache'
+        HOME = "${WORKSPACE}"
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
     }
     stages {
         stage("Install dependeicies") {
