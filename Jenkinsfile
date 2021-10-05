@@ -15,9 +15,14 @@ pipeline {
                 sh 'npm rebuild'
             }
         }
-        stage("running") {
+        stage("Running") {
             steps {
                 sh 'npm start'
+            }
+        }
+        stage("Testing") {
+            steps {
+                sh 'npm jest'
             }
         }
     }
