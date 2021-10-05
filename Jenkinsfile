@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'sitapati/docker-alpine-python-node'
-            image 'docker pull browserless/chrome'
+            image 'browserless/chrome'
             args '-p 3000:3000'
         }
     }
