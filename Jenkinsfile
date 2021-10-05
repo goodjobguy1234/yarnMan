@@ -22,9 +22,7 @@ pipeline {
         }
         stage("Testing") {
             steps {
-                sh 'chmod 700 chromium.sh'
-                sh './chromium.sh'
-                sh 'apt-get install chromium-browser'
+                sh 'apk add --no-cache  chromium --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/main
                 sh 'npm test'
             }
         }
