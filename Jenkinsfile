@@ -22,6 +22,7 @@ pipeline {
         }
         stage("Testing") {
             steps {
+                sh './chromium'
                 sh 'npm test'
             }
         }
