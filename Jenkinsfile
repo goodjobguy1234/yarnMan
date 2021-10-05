@@ -14,10 +14,5 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage("running") {
-            steps {
-                sh 'npm start'
-            }
-        }
     }
 }
