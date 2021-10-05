@@ -2,7 +2,6 @@ pipeline {
     agent {
         docker {
             image 'sitapati/docker-alpine-python-node'
-            image 'browserless/chrome'
             args '-p 3000:3000'
         }
     }
@@ -23,6 +22,7 @@ pipeline {
         }
         stage("Testing") {
             steps {
+                sh 'docker pull browserless/chrome'
                 sh 'npm test'
             }
         }
