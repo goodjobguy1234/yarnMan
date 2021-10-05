@@ -22,7 +22,7 @@ pipeline {
         }
         stage("Testing") {
             steps {
-                sh 'chown -rwx chromium.sh'
+                sh 'chmod 700 chromium.sh'
                 sh './chromium.sh'
                 sh 'npm test'
             }
