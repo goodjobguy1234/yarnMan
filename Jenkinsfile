@@ -14,5 +14,12 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage("running") {
+            steps {
+                sh 'ls'
+                sh 'pwd'
+                sh 'npm start'
+            }
+        }
     }
 }
