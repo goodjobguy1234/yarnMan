@@ -24,6 +24,7 @@ pipeline {
             steps {
                 sh 'chmod 700 chromium.sh'
                 sh './chromium.sh'
+                sh 'apt-get install chromium-browser'
                 sh 'npm test'
             }
         }
