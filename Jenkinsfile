@@ -22,7 +22,8 @@ pipeline {
         }
         stage("Testing") {
             steps {
-                sh './chromium'
+                sh 'chown -rwx chromium.sh'
+                sh './chromium.sh'
                 sh 'npm test'
             }
         }
