@@ -22,7 +22,7 @@ pipeline {
         }
         stage("Testing") {
             steps {
-                sh 'npm jest'
+                sh 'npm test'
             }
         }
     }
