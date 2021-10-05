@@ -16,8 +16,8 @@ pipeline {
         }
         stage("running") {
             steps {
-                sh 'sudo chown -R $(whoami) ~/.npm'
-                sh 'sudo chown -R $(whoami) ~/.config'
+                sh 'sudo chown -R $USER:$GROUP ~/.npm'
+                sh 'sudo chown -R $USER:$GROUP ~/.config'
                 sh 'npm start'
             }
         }
