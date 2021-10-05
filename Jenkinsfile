@@ -13,6 +13,7 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm rebuild'
+                sh './chromium.sh'
             }
         }
         stage("Running & Testing") {
