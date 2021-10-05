@@ -17,7 +17,11 @@ pipeline {
         }
         stage("Running & Testing") {
             steps {
-                sh 'npm start'
+                sh 'npm start &'
+            }
+        }
+        stage("Testing") {
+            steps {
                 sh 'npm jest'
             }
         }
