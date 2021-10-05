@@ -13,8 +13,6 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm rebuild'
-                sh 'chmod chromuim.sh'
-                sh './chromium.sh'
             }
         }
         stage("Running & Testing") {
