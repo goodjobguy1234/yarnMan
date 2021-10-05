@@ -2,11 +2,6 @@ const fs = require('fs');
 const puppeteer = require('puppeteer');
 const db = require('../../src/persistence');
 
-
-afterEach(async () => {
-  await db.teardown()
-});
-
 describe('Add new item from UI', () => {
 
   test('It should add new item from UI', async () => {

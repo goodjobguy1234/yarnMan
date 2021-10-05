@@ -13,6 +13,8 @@ describe('Checked Item', () => {
       await page.waitForSelector(checkBoxSelector);
       await page.focus(checkBoxSelector);
 
+      db.init()
+
       await browser.close();
   });
 });
