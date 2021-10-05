@@ -12,12 +12,11 @@ pipeline {
         stage("Install dependeicies") {
             steps {
                 sh 'npm install'
+                sh 'npm rebuild'
             }
         }
         stage("running") {
             steps {
-                sh 'ls'
-                sh 'pwd'
                 sh 'npm start'
             }
         }
