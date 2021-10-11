@@ -17,7 +17,6 @@ pipeline {
         }
         stage("Running & Testing") {
             steps {
-                sh 'ufw allow 3000'
                 sh 'npm start'
             }
         }
