@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'sitapati/docker-alpine-python-node'
+            image 'mrts/docker-python-nodejs-google-chrome'
             args '-p 3000:3000'
         }
     }
