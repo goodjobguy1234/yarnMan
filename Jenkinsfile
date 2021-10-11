@@ -12,6 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'sudo chown -R 1000:1000 "/.npm"'
                 sh 'npm install'
             }
         }
